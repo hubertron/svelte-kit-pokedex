@@ -1,8 +1,7 @@
 <script context="module">
     import { getPokemonById } from "../../pokestore";
-    export async function load(ctx) {
-        let id = ctx.page.params.id;
-        const pokeman = await getPokemonById(id);
+    export async function load(params, fetch) {
+        const pokeman = await getPokemonById(params.id);
         return { props: { pokeman }}
     }
 </script>
